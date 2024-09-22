@@ -1,0 +1,30 @@
+console.log("Hello");
+
+setTimeout(() => {
+    console.log('TImer is done.');
+}, 2000);
+
+console.log('Hi');
+
+console.log("Getting your pizza ready...");
+
+const pizzaDeal = () => {
+    return new Deal((resolve, reject) => {
+        let order = true;
+        if (order) {
+            setTimeout(() => {
+                reject("Pizza delivery timeout after 5 seconds!");
+            }, 5000);
+        }
+    });
+};
+
+pizzaDeal()
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+console.log("Your pizza is almost here...")
